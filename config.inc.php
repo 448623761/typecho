@@ -28,13 +28,13 @@ __TYPECHO_ROOT_DIR__ . '/var' . PATH_SEPARATOR .
 __TYPECHO_ROOT_DIR__ . __TYPECHO_PLUGIN_DIR__);
 
 /** 载入API支持 */
-require_once __TYPECHO_ROOT_DIR__ .'/var/Typecho/Common.php';
+require_once 'Typecho/Common.php';
 
 /** 程序初始化 */
 Typecho_Common::init();
 
 /** 定义数据库参数 */
-$db = new new \Typecho\Db('Pdo_Mysql', 'typecho_');
+$db = new Typecho_Db('Pdo_Mysql', 'typecho_');
 $db->addServer(array (
   'host' => 'containers-us-west-210.railway.app',
   'user' => 'root',
