@@ -9,6 +9,13 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                     <div
                         class="d-flex position-relative align-content-center align-items-center align-self-center justify-content-start">
                         <div class="mt-1">
+                            <?php if ($this->user->hasLogin()): ?>
+                                <a href="<?php $this->options->adminUrl(); ?>"><?php _e('进入后台'); ?>
+                                        (<?php $this->user->screenName(); ?>)</a></li>
+                                <a href="<?php $this->options->logoutUrl(); ?>"><?php _e('退出'); ?></a>
+                            <?php else: ?>
+                                <a href="<?php $this->options->adminUrl('login.php'); ?>"><?php _e('登录'); ?></a>
+                            <?php endif; ?>
                             <img class="avatar lazyload" width="50" height="50"
                                  src="<?php echo getAvatarByMail($this->author->mail) ?>" alt="<?php $this->author->screenName(); ?>"
                             />
