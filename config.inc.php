@@ -15,7 +15,7 @@ define('__TYPECHO_ADMIN_DIR__', '/admin/');
 
 @set_include_path(get_include_path() . PATH_SEPARATOR .
 __TYPECHO_ROOT_DIR__ . '/var' . PATH_SEPARATOR .
-__TYPECHO_ROOT_DIR__ . __TYPECHO_PLUGIN_DIR__ . __TYPECHO_ROOT_DIR__ . '/usr');
+__TYPECHO_ROOT_DIR__ . __TYPECHO_PLUGIN_DIR__);
 
 // register autoload
 require_once 'Typecho/Common.php';
@@ -24,9 +24,9 @@ require_once 'Typecho/Common.php';
 Typecho_Common::init();
 
 // config db
-$db = new Typecho_Db('Pdo_SQLite', 'typecho_');
+$db = new Typecho_Db('Pdo_SQLite', 'arwtec_');
 $db->addServer(array (
-  'file' => __TYPECHO_ROOT_DIR__.'/usr/644fd304aa2f3.db',
+  'file' => __TYPECHO_ROOT_DIR__ . '/usr/644fd304aa2f3.db',
 ), Typecho_Db::READ | Typecho_Db::WRITE);
 Typecho_Db::set($db);
 
