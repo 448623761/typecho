@@ -26,7 +26,7 @@ Typecho_Common::init();
 // config db
 $db = new Typecho_Db('Pdo_SQLite', 'typecho_');
 $db->addServer(array (
-  'file' => __TYPECHO_ROOT_DIR__.'/usr/644fb1c4692f6.db',
+  'file' => __TYPECHO_ROOT_DIR__.'/usr/644fd304aa2f3.db',
 ), Typecho_Db::READ | Typecho_Db::WRITE);
 Typecho_Db::set($db);
 
