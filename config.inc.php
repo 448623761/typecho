@@ -1,31 +1,79 @@
 <?php
 
+// // define('__TYPECHO_SECURE__',true);
+// // site root path
+// define('__TYPECHO_ROOT_DIR__', dirname(__FILE__));
+
+// // plugin directory (relative path)
+// define('__TYPECHO_PLUGIN_DIR__', '/usr/plugins');
+
+// // theme directory (relative path)
+// define('__TYPECHO_THEME_DIR__', '/usr/themes');
+
+// // admin directory (relative path)
+// define('__TYPECHO_ADMIN_DIR__', '/admin/');
+
+// @set_include_path(get_include_path() . PATH_SEPARATOR .
+// __TYPECHO_ROOT_DIR__ . '/var' . PATH_SEPARATOR .
+// __TYPECHO_ROOT_DIR__ . __TYPECHO_PLUGIN_DIR__);
+
+// // register autoload
+// require_once 'Typecho/Common.php';
+
+// // init
+// Typecho_Common::init();
+
+// // config db
+// $db = new Typecho_Db('Pdo_SQLite', 'typecho_');
+// $db->addServer(array (
+//   'file' => __TYPECHO_ROOT_DIR__.'/usr/644fb1c4692f6.db',
+// ), Typecho_Db::READ | Typecho_Db::WRITE);
+// Typecho_Db::set($db);
+
+<?php
+/**
+ * Typecho Blog Platform
+ *
+ * @copyright  Copyright (c) 2008 Typecho team (http://www.typecho.org)
+ * @license    GNU General Public License 2.0
+ * @version    $Id$
+ */
+
+/** 开启https */
 define('__TYPECHO_SECURE__',true);
-// site root path
+
+/** 定义根目录 */
 define('__TYPECHO_ROOT_DIR__', dirname(__FILE__));
 
-// plugin directory (relative path)
+/** 定义插件目录(相对路径) */
 define('__TYPECHO_PLUGIN_DIR__', '/usr/plugins');
 
-// theme directory (relative path)
+/** 定义模板目录(相对路径) */
 define('__TYPECHO_THEME_DIR__', '/usr/themes');
 
-// admin directory (relative path)
+/** 后台路径(相对路径) */
 define('__TYPECHO_ADMIN_DIR__', '/admin/');
 
+/** 设置包含路径 */
 @set_include_path(get_include_path() . PATH_SEPARATOR .
 __TYPECHO_ROOT_DIR__ . '/var' . PATH_SEPARATOR .
 __TYPECHO_ROOT_DIR__ . __TYPECHO_PLUGIN_DIR__);
 
-// register autoload
+/** 载入API支持 */
 require_once 'Typecho/Common.php';
 
-// init
+/** 程序初始化 */
 Typecho_Common::init();
 
-// config db
-$db = new Typecho_Db('Pdo_SQLite', 'typecho_');
+/** 定义数据库参数 */
+$db = new Typecho_Db('Pdo_Mysql', 'typecho_');
 $db->addServer(array (
-  'file' => __TYPECHO_ROOT_DIR__.'/usr/644fb1c4692f6.db',
+  'host' => 'containers-us-west-210.railway.app',
+  'user' => 'root',
+  'password' => 'DobsZUSd5HIoMfV6Mw8X',
+  'charset' => 'utf8mb4',
+  'port' => '5955',
+  'database' => 'railway',
+  'engine' => 'MyISAM',
 ), Typecho_Db::READ | Typecho_Db::WRITE);
 Typecho_Db::set($db);
